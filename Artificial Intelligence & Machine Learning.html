@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI/ML Mastery Tracker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .stage {
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .stage h3 {
+      margin-top: 0;
+      color: #00e6e6;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    .progress-container {
+      background: #333;
+      border-radius: 20px;
+      margin: 1rem auto;
+      height: 30px;
+      width: 80%;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(to right, #00ff88, #00ccff);
+      width: 0%;
+      text-align: center;
+      line-height: 30px;
+      color: #000;
+      font-weight: bold;
+    }
+    .level {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+    .note-link {
+      margin-top: 0.5rem;
+      display: block;
+      color: #00ffff;
+    }
+  </style>
+</head>
+<body>
+  <h1>🤖 AI/ML Mastery Tracker</h1>
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar">0%</div>
+  </div>
+  <div class="level" id="level">👾 Bot</div>
+
+  <!-- STAGES 1 to 12 -->
+  <div class="stage">
+    <h3>🧠 Stage 1: Math for AI</h3>
+    <label><input type="checkbox" class="task"> Linear Algebra Basics</label>
+    <label><input type="checkbox" class="task"> Calculus (Derivatives & Gradients)</label>
+    <label><input type="checkbox" class="task"> Probability & Statistics</label>
+    <label><input type="checkbox" class="task"> Vectors, Matrices, Tensors</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <div class="stage">
+    <h3>💻 Stage 2: Python for AI/ML</h3>
+    <label><input type="checkbox" class="task"> Numpy & Pandas</label>
+    <label><input type="checkbox" class="task"> Data Visualization (Matplotlib, Seaborn)</label>
+    <label><input type="checkbox" class="task"> Jupyter Notebooks</label>
+    <label><input type="checkbox" class="task"> Data Preprocessing</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <div class="stage">
+    <h3>📊 Stage 3: Data Collection & Cleaning</h3>
+    <label><input type="checkbox" class="task"> Data Sources (APIs, Web Scraping)</label>
+    <label><input type="checkbox" class="task"> Handling Missing Data</label>
+    <label><input type="checkbox" class="task"> Data Transformation</label>
+    <label><input type="checkbox" class="task"> Feature Engineering</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <div class="stage">
+    <h3>🤖 Stage 4: Supervised Learning</h3>
+    <label><input type="checkbox" class="task"> Linear Regression</label>
+    <label><input type="checkbox" class="task"> Logistic Regression</label>
+    <label><input type="checkbox" class="task"> Decision Trees</label>
+    <label><input type="checkbox" class="task"> SVM, KNN</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <div class="stage">
+    <h3>🧩 Stage 5: Unsupervised Learning</h3>
+    <label><input type="checkbox" class="task"> Clustering (K-Means, DBSCAN)</label>
+    <label><input type="checkbox" class="task"> Dimensionality Reduction (PCA)</label>
+    <label><input type="checkbox" class="task"> Association Rule Mining</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <div class="stage">
+    <h3>🔍 Stage 6: Model Evaluation & Tuning</h3>
+    <label><input type="checkbox" class="task"> Confusion Matrix</label>
+    <label><input type="checkbox" class="task"> Precision, Recall, F1 Score</label>
+    <label><input type="checkbox" class="task"> Cross Validation</label>
+    <label><input type="checkbox" class="task"> Hyperparameter Tuning</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <div class="stage">
+    <h3>🧠 Stage 7: Neural Networks</h3>
+    <label><input type="checkbox" class="task"> Perceptron & MLP</label>
+    <label><input type="checkbox" class="task"> Activation Functions</label>
+    <label><input type="checkbox" class="task"> Backpropagation</label>
+    <label><input type="checkbox" class="task"> Keras & TensorFlow Basics</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <div class="stage">
+    <h3>🎯 Stage 8: Deep Learning</h3>
+    <label><input type="checkbox" class="task"> CNNs for Image Processing</label>
+    <label><input type="checkbox" class="task"> RNNs & LSTMs</label>
+    <label><input type="checkbox" class="task"> Transfer Learning</label>
+    <label><input type="checkbox" class="task"> GANs (Generative Adversarial Networks)</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <div class="stage">
+    <h3>🌐 Stage 9: NLP (Natural Language Processing)</h3>
+    <label><input type="checkbox" class="task"> Text Cleaning & Tokenization</label>
+    <label><input type="checkbox" class="task"> Word Embeddings (Word2Vec, GloVe)</label>
+    <label><input type="checkbox" class="task"> Sentiment Analysis</label>
+    <label><input type="checkbox" class="task"> Transformers & BERT</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <div class="stage">
+    <h3>🕹️ Stage 10: Reinforcement Learning</h3>
+    <label><input type="checkbox" class="task"> Markov Decision Processes</label>
+    <label><input type="checkbox" class="task"> Q-Learning</label>
+    <label><input type="checkbox" class="task"> Deep Q Networks</label>
+    <label><input type="checkbox" class="task"> Policy Gradients</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <div class="stage">
+    <h3>🚀 Stage 11: AI Projects</h3>
+    <label><input type="checkbox" class="task"> Chatbot</label>
+    <label><input type="checkbox" class="task"> Image Classifier</label>
+    <label><input type="checkbox" class="task"> Stock Market Predictor</label>
+    <label><input type="checkbox" class="task"> Resume Screener AI</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <div class="stage">
+    <h3>🎓 Stage 12: Career Prep</h3>
+    <label><input type="checkbox" class="task"> Kaggle Competitions</label>
+    <label><input type="checkbox" class="task"> GitHub Portfolio</label>
+    <label><input type="checkbox" class="task"> Resume with AI Projects</label>
+    <label><input type="checkbox" class="task"> Mock Interviews</label>
+    <a class="note-link" href="https://drive.google.com" target="_blank">📤 Upload Notes</a>
+  </div>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.task');
+    const progressBar = document.getElementById('progress-bar');
+    const level = document.getElementById('level');
+
+    function updateProgress() {
+      const total = checkboxes.length;
+      const completed = Array.from(checkboxes).filter(c => c.checked).length;
+      const percent = Math.floor((completed / total) * 100);
+      progressBar.style.width = percent + '%';
+      progressBar.textContent = percent + '%';
+
+      if (percent < 10) level.textContent = '👾 Bot - Keep going!';
+      else if (percent < 30) level.textContent = '🌱 Beginner - Nice Start!';
+      else if (percent < 60) level.textContent = '⚡ Intermediate - Good Progress!';
+      else if (percent < 90) level.textContent = '🔥 Pro - Almost there!';
+      else level.textContent = '🚀 Pro+ - AI/ML Master!';
+
+      // Save to localStorage
+      checkboxes.forEach((cb, i) => {
+        localStorage.setItem(`task-${i}`, cb.checked);
+      });
+    }
+
+    checkboxes.forEach((cb, i) => {
+      cb.checked = localStorage.getItem(`task-${i}`) === 'true';
+      cb.addEventListener('change', updateProgress);
+    });
+
+    window.onload = updateProgress;
+  </script>
+</body>
+</html>

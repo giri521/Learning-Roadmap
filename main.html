@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Roadmap</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            margin: 0 15px;
+            font-size: 1.1em;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #16a085;
+            border-radius: 5px;
+        }
+
+        /* Main Content */
+        .container {
+            padding: 50px 20px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            width: 30%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            min-width: 270px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            font-size: 1.6em;
+            color: #16a085;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 1em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .card ul {
+            text-align: left;
+            padding-left: 20px;
+            list-style-type: none;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .card ul li {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .card a {
+            padding: 12px 20px;
+            background-color: #16a085;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: #1abc9c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Master Your Learning Path</h1>
+        <p>Explore various roadmap guides for mastering programming, development, AI & ML, and more!</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="java.html">Java + DSA</a>
+        <a href="python.html">Python + DSA</a>
+        <a href="frontend.html">Frontend</a>
+        <a href="backend.html">Backend</a>
+        <a href="aptitude.html">Aptitude</a>
+        <a href="Artificial Intelligence & Machine Learning.html">AI & ML</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Java + DSA -->
+        <section id="java-dsa">
+            <h2>Java + DSA Roadmap</h2>
+            <div class="services">
+                <div class="card">
+                    <h3>Java Basics & DSA Concepts</h3>
+                    <p>Start your programming journey by mastering Java and understanding Data Structures & Algorithms.</p>
+                    <ul>
+                        <li>Java Basics: Syntax, Variables, Data Types</li>
+                        <li>Arrays, Linked Lists</li>
+                        <li>Sorting & Searching Algorithms</li>
+                        <li>Advanced Data Structures</li>
+                    </ul>
+                    <a href="java.html">Learn More</a>
+                </div>
+                <div class="card">
+                    <h3>Core Java Concepts</h3>
+                    <p>Explore object-oriented programming, collections, and advanced Java topics.</p>
+                    <ul>
+                        <li>Object-Oriented Programming</li>
+                        <li>Collections Framework</li>
+                        <li>Exception Handling</li>
+                        <li>File I/O and Multithreading</li>
+                    </ul>
+                    <a href="java.html">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Python + DSA -->
+        <section id="python-dsa">
+            <h2>Python + DSA Roadmap</h2>
+            <div class="services">
+                <div class="card">
+                    <h3>Python Basics & DSA</h3>
+                    <p>Master Python programming and learn essential data structures and algorithms for problem-solving.</p>
+                    <ul>
+                        <li>Python Syntax & Functions</li>
+                        <li>Data Structures: Lists, Dictionaries</li>
+                        <li>Sorting & Searching Algorithms</li>
+                    </ul>
+                    <a href="python.html">Learn More</a>
+                </div>
+                <div class="card">
+                    <h3>Advanced Python & DSA</h3>
+                    <p>Learn advanced Python features and algorithms to tackle complex problems effectively.</p>
+                    <ul>
+                        <li>Advanced Data Structures: Stacks, Queues</li>
+                        <li>Greedy Algorithms</li>
+                        <li>Dynamic Programming</li>
+                    </ul>
+                    <a href="python.html">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Frontend Development -->
+        <section id="frontend">
+            <h2>Frontend Development Roadmap</h2>
+            <div class="services">
+                <div class="card">
+                    <h3>HTML, CSS, and JavaScript</h3>
+                    <p>Learn the essentials of frontend web development using HTML, CSS, and JavaScript.</p>
+                    <ul>
+                        <li>HTML: Structuring Web Pages</li>
+                        <li>CSS: Layout & Styling</li>
+                        <li>JavaScript: DOM Manipulation</li>
+                    </ul>
+                    <a href="frontend.html">Learn More</a>
+                </div>
+                <div class="card">
+                    <h3>Frontend Frameworks</h3>
+                    <p>Learn to build dynamic websites using modern frontend frameworks like React and Vue.js.</p>
+                    <ul>
+                        <li>React.js</li>
+                        <li>Vue.js</li>
+                        <li>Responsive Web Design</li>
+                    </ul>
+                    <a href="frontend.html">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Backend Development -->
+        <section id="backend">
+            <h2>Backend Development Roadmap</h2>
+            <div class="services">
+                <div class="card">
+                    <h3>Backend Fundamentals</h3>
+                    <p>Learn backend development with server-side programming, databases, and APIs.</p>
+                    <ul>
+                        <li>Node.js, Python, Java</li>
+                        <li>Database Fundamentals</li>
+                        <li>REST APIs</li>
+                    </ul>
+                    <a href="backend.html">Learn More</a>
+                </div>
+                <div class="card">
+                    <h3>Advanced Backend Concepts</h3>
+                    <p>Take your backend skills further with advanced topics like microservices, security, and deployment.</p>
+                    <ul>
+                        <li>Microservices Architecture</li>
+                        <li>Authentication (JWT, OAuth)</li>
+                        <li>Cloud Deployment</li>
+                    </ul>
+                    <a href="backend.html">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI & ML -->
+        <section id="ai-ml">
+            <h2>AI & ML Roadmap</h2>
+            <div class="services">
+                <div class="card">
+                    <h3>Machine Learning Fundamentals</h3>
+                    <p>Learn the core concepts and techniques in Machine Learning, including algorithms and model training.</p>
+                    <ul>
+                        <li>Supervised Learning</li>
+                        <li>Unsupervised Learning</li>
+                        <li>Regression & Classification</li>
+                    </ul>
+                    <a href="Artificial Intelligence & Machine Learning.html">Learn More</a>
+                </div>
+                <div class="card">
+                    <h3>Deep Learning & AI</h3>
+                    <p>Dive into advanced topics like neural networks, deep learning, and applications of AI in the real world.</p>
+                    <ul>
+                        <li>Neural Networks</li>
+                        <li>Deep Learning with TensorFlow & PyTorch</li>
+                        <li>Natural Language Processing</li>
+                    </ul>
+                    <a href="Artificial Intelligence & Machine Learning.html">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aptitude Mastery Tracker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .stage {
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .stage h3 {
+      margin-top: 0;
+      color: #00ffcc;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    .progress-container {
+      background: #444;
+      border-radius: 20px;
+      margin: 1rem auto;
+      height: 30px;
+      width: 80%;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(to right, #00ff88, #00ccff);
+      width: 0%;
+      text-align: center;
+      line-height: 30px;
+      color: #000;
+      font-weight: bold;
+    }
+    .level {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+    .upload-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .upload-link a {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 Aptitude Mastery Tracker</h1>
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar">0%</div>
+  </div>
+  <div class="level" id="level">👾 Bot</div>
+
+  <div class="stage">
+    <h3>🧮 Stage 1: Number System Basics</h3>
+    <label><input type="checkbox" class="task"> Divisibility Rules</label>
+    <label><input type="checkbox" class="task"> Factors & Multiples</label>
+    <label><input type="checkbox" class="task"> LCM & HCF</label>
+    <label><input type="checkbox" class="task"> Prime Numbers</label>
+    <label><input type="checkbox" class="task"> Remainders & Modular Arithmetic</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <div class="stage">
+    <h3>📊 Stage 2: Percentages</h3>
+    <label><input type="checkbox" class="task"> Basic Percentage Calculations</label>
+    <label><input type="checkbox" class="task"> Percentage Change</label>
+    <label><input type="checkbox" class="task"> Successive Percentage</label>
+    <label><input type="checkbox" class="task"> Reverse Percentage</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <div class="stage">
+    <h3>💰 Stage 3: Profit & Loss</h3>
+    <label><input type="checkbox" class="task"> Cost Price & Selling Price</label>
+    <label><input type="checkbox" class="task"> Profit and Loss Percentage</label>
+    <label><input type="checkbox" class="task"> Marked Price & Discounts</label>
+    <label><input type="checkbox" class="task"> Successive Transactions</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <div class="stage">
+    <h3>⏳ Stage 4: Time & Work</h3>
+    <label><input type="checkbox" class="task"> Work Done Formula</label>
+    <label><input type="checkbox" class="task"> Efficiency & Man Days</label>
+    <label><input type="checkbox" class="task"> Pipes & Cisterns</label>
+    <label><input type="checkbox" class="task"> Alternate Work</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <div class="stage">
+    <h3>🚗 Stage 5: Time, Speed & Distance</h3>
+    <label><input type="checkbox" class="task"> Speed, Distance, Time Formula</label>
+    <label><input type="checkbox" class="task"> Relative Speed</label>
+    <label><input type="checkbox" class="task"> Trains & Boats Problems</label>
+    <label><input type="checkbox" class="task"> Average Speed</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <div class="stage">
+    <h3>📈 Stage 6: Averages</h3>
+    <label><input type="checkbox" class="task"> Basic Average Calculations</label>
+    <label><input type="checkbox" class="task"> Weighted Average</label>
+    <label><input type="checkbox" class="task"> Average of Consecutive Numbers</label>
+    <label><input type="checkbox" class="task"> Combined Average</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <div class="stage">
+    <h3>⚖️ Stage 7: Ratio & Proportion</h3>
+    <label><input type="checkbox" class="task"> Basics of Ratio</label>
+    <label><input type="checkbox" class="task"> Proportions and Variations</label>
+    <label><input type="checkbox" class="task"> Partnership Problems</label>
+    <label><input type="checkbox" class="task"> Mixture & Alligation</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <div class="stage">
+    <h3>🏦 Stage 8: Interest</h3>
+    <label><input type="checkbox" class="task"> Simple Interest</label>
+    <label><input type="checkbox" class="task"> Compound Interest</label>
+    <label><input type="checkbox" class="task"> Difference between SI & CI</label>
+    <label><input type="checkbox" class="task"> Growth-based Problems</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <div class="stage">
+    <h3>🎲 Stage 9: Permutation & Combination</h3>
+    <label><input type="checkbox" class="task"> Factorial Concepts</label>
+    <label><input type="checkbox" class="task"> Permutations (Arrangements)</label>
+    <label><input type="checkbox" class="task"> Combinations (Selections)</label>
+    <label><input type="checkbox" class="task"> Circular & Conditional Cases</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <div class="stage">
+    <h3>🎯 Stage 10: Probability</h3>
+    <label><input type="checkbox" class="task"> Basic Probability</label>
+    <label><input type="checkbox" class="task"> Independent Events</label>
+    <label><input type="checkbox" class="task"> Conditional Probability</label>
+    <label><input type="checkbox" class="task"> Dice & Cards Problems</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <div class="stage">
+    <h3>⏰ Stage 11: Clocks & Calendars</h3>
+    <label><input type="checkbox" class="task"> Angle Between Hands</label>
+    <label><input type="checkbox" class="task"> Mirror & Shadow Times</label>
+    <label><input type="checkbox" class="task"> Odd Days & Leap Years</label>
+    <label><input type="checkbox" class="task"> Day of the Week</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <div class="stage">
+    <h3>🧠 Stage 12: Logical Reasoning & Puzzles</h3>
+    <label><input type="checkbox" class="task"> Blood Relations</label>
+    <label><input type="checkbox" class="task"> Direction Sense</label>
+    <label><input type="checkbox" class="task"> Syllogisms</label>
+    <label><input type="checkbox" class="task"> Seating Arrangement</label>
+    <label><input type="checkbox" class="task"> Coding-Decoding</label>
+    <div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
+  </div>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.task');
+    const progressBar = document.getElementById('progress-bar');
+    const level = document.getElementById('level');
+
+    function updateProgress() {
+      const total = checkboxes.length;
+      const completed = Array.from(checkboxes).filter(c => c.checked).length;
+      const percent = Math.floor((completed / total) * 100);
+      progressBar.style.width = percent + '%';
+      progressBar.textContent = percent + '%';
+
+      if (percent < 10) level.textContent = '👾 Bot – Getting Started';
+      else if (percent < 30) level.textContent = '🌱 Beginner – Gaining Momentum';
+      else if (percent < 60) level.textContent = '⚡ Intermediate – Keep Pushing!';
+      else if (percent < 90) level.textContent = '🔥 Pro – Almost There!';
+      else level.textContent = '🚀 Pro++ – Aptitude Master!';
+    }
+
+    checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+    window.onload = updateProgress;
+  </script>
+</body>
+</html>

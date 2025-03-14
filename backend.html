@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Backend Developer Roadmap</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 2rem;
+      margin: 0;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #00ffff;
+    }
+
+    .stage {
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 1rem 0;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .stage h3 {
+      color: #ffd700;
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin: 0.5rem 0;
+      cursor: pointer;
+    }
+
+    .progress-container {
+      background: #444;
+      border-radius: 30px;
+      height: 30px;
+      width: 80%;
+      margin: 1.5rem auto;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(to right, #00ff88, #00ccff);
+      width: 0%;
+      text-align: center;
+      line-height: 30px;
+      font-weight: bold;
+      color: #000;
+      transition: width 0.4s ease-in-out;
+    }
+
+    .level {
+      text-align: center;
+      font-size: 1.3rem;
+      margin: 1rem 0;
+    }
+
+    .upload-link {
+      margin-top: 1rem;
+      display: inline-block;
+      background: #00ccff;
+      color: #000;
+      padding: 6px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .upload-link:hover {
+      background: #00ff88;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔧 Backend Developer Roadmap Tracker</h1>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar">0%</div>
+  </div>
+  <div class="level" id="level">👾 Bot</div>
+
+  <!-- STAGE 1 -->
+  <div class="stage">
+    <h3>🚀 Stage 1: Internet & Web Basics</h3>
+    <label><input type="checkbox" class="task"> How the Web Works</label>
+    <label><input type="checkbox" class="task"> HTTP & HTTPS</label>
+    <label><input type="checkbox" class="task"> Domain Name System (DNS)</label>
+    <label><input type="checkbox" class="task"> Browsers and Servers</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <!-- STAGE 2 -->
+  <div class="stage">
+    <h3>📦 Stage 2: Basic Frontend (Optional)</h3>
+    <label><input type="checkbox" class="task"> HTML & Forms</label>
+    <label><input type="checkbox" class="task"> Basic CSS & Responsive Layout</label>
+    <label><input type="checkbox" class="task"> JavaScript Basics</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <!-- STAGE 3 -->
+  <div class="stage">
+    <h3>🧠 Stage 3: Programming Fundamentals</h3>
+    <label><input type="checkbox" class="task"> Choose a Language (Node.js / Python / Java / Go)</label>
+    <label><input type="checkbox" class="task"> Variables, Data Types, Loops</label>
+    <label><input type="checkbox" class="task"> Functions, Classes, Error Handling</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <!-- STAGE 4 -->
+  <div class="stage">
+    <h3>🧩 Stage 4: Version Control</h3>
+    <label><input type="checkbox" class="task"> Git Basics</label>
+    <label><input type="checkbox" class="task"> GitHub / GitLab Workflow</label>
+    <label><input type="checkbox" class="task"> Branching, Merging, Pull Requests</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <!-- STAGE 5 -->
+  <div class="stage">
+    <h3>🗃️ Stage 5: Databases</h3>
+    <label><input type="checkbox" class="task"> SQL (MySQL/PostgreSQL)</label>
+    <label><input type="checkbox" class="task"> NoSQL (MongoDB)</label>
+    <label><input type="checkbox" class="task"> CRUD Operations</label>
+    <label><input type="checkbox" class="task"> ORMs (e.g., Sequelize, SQLAlchemy)</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <!-- STAGE 6 -->
+  <div class="stage">
+    <h3>🌐 Stage 6: Backend Framework</h3>
+    <label><input type="checkbox" class="task"> Express.js / Flask / Spring Boot</label>
+    <label><input type="checkbox" class="task"> Routing & Middleware</label>
+    <label><input type="checkbox" class="task"> Handling HTTP Requests</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <!-- STAGE 7 -->
+  <div class="stage">
+    <h3>🔐 Stage 7: Authentication & Security</h3>
+    <label><input type="checkbox" class="task"> Login / Signup Systems</label>
+    <label><input type="checkbox" class="task"> JWT / OAuth</label>
+    <label><input type="checkbox" class="task"> Hashing (bcrypt, Argon2)</label>
+    <label><input type="checkbox" class="task"> Securing APIs</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <!-- STAGE 8 -->
+  <div class="stage">
+    <h3>📤 Stage 8: APIs & JSON</h3>
+    <label><input type="checkbox" class="task"> RESTful API Design</label>
+    <label><input type="checkbox" class="task"> Postman for Testing</label>
+    <label><input type="checkbox" class="task"> Status Codes & Error Handling</label>
+    <label><input type="checkbox" class="task"> JSON Serialization</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <!-- STAGE 9 -->
+  <div class="stage">
+    <h3>⚙️ Stage 9: Deployment & Hosting</h3>
+    <label><input type="checkbox" class="task"> Hosting (Render, Railway, Vercel)</label>
+    <label><input type="checkbox" class="task"> CI/CD Basics</label>
+    <label><input type="checkbox" class="task"> Environment Variables</label>
+    <label><input type="checkbox" class="task"> Reverse Proxies (Nginx)</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <!-- STAGE 10 -->
+  <div class="stage">
+    <h3>🔁 Stage 10: Advanced Concepts</h3>
+    <label><input type="checkbox" class="task"> WebSockets (Real-time Apps)</label>
+    <label><input type="checkbox" class="task"> Caching (Redis, Memcached)</label>
+    <label><input type="checkbox" class="task"> Rate Limiting</label>
+    <label><input type="checkbox" class="task"> API Gateway & Microservices</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <!-- STAGE 11 -->
+  <div class="stage">
+    <h3>📈 Stage 11: Monitoring & Logging</h3>
+    <label><input type="checkbox" class="task"> Logs (Winston, Loguru)</label>
+    <label><input type="checkbox" class="task"> Error Tracking (Sentry)</label>
+    <label><input type="checkbox" class="task"> Uptime Monitoring</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <!-- STAGE 12 -->
+  <div class="stage">
+    <h3>🎯 Stage 12: Projects & Practice</h3>
+    <label><input type="checkbox" class="task"> Blog API</label>
+    <label><input type="checkbox" class="task"> Auth System</label>
+    <label><input type="checkbox" class="task"> E-commerce Backend</label>
+    <label><input type="checkbox" class="task"> Real-Time Chat App</label>
+    <label><input type="checkbox" class="task"> Mock Interviews & DSA</label>
+    <a href="https://drive.google.com/" class="upload-link" target="_blank">Upload Notes</a>
+  </div>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.task');
+    const progressBar = document.getElementById('progress-bar');
+    const level = document.getElementById('level');
+
+    function updateProgress() {
+      const total = checkboxes.length;
+      const completed = Array.from(checkboxes).filter(c => c.checked).length;
+      const percent = Math.floor((completed / total) * 100);
+      progressBar.style.width = percent + '%';
+      progressBar.textContent = percent + '%';
+
+      if (percent < 10) level.textContent = '👾 Bot - Just getting started!';
+      else if (percent < 30) level.textContent = '🌱 Beginner - Keep going!';
+      else if (percent < 60) level.textContent = '⚡ Intermediate - Great job!';
+      else if (percent < 90) level.textContent = '🔥 Pro - Almost there!';
+      else level.textContent = '🚀 Pro++ - You’ve mastered backend!';
+    }
+
+    checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+    window.onload = updateProgress;
+  </script>
+</body>
+</html>

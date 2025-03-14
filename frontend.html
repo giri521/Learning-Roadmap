@@ -1,0 +1,254 @@
+<!-- 💻 HTML + CSS + JavaScript Mastery Tracker -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML + CSS + JS Mastery Tracker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #000046, #1CB5E0);
+      color: #fff;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .stage {
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .stage h3 {
+      margin-top: 0;
+      color: #ffd700;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    .notes-link {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #00ffcc;
+      color: #000;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .progress-container {
+      background: #444;
+      border-radius: 20px;
+      margin: 1rem auto;
+      height: 30px;
+      width: 80%;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(to right, #00ff88, #00ccff);
+      width: 0%;
+      text-align: center;
+      line-height: 30px;
+      color: #000;
+      font-weight: bold;
+    }
+    .level {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>💻 HTML + CSS + JavaScript Mastery Tracker</h1>
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar">0%</div>
+  </div>
+  <div class="level" id="level">👾 Bot</div>
+
+  <div id="stages"></div>
+
+  <script>
+    const stagesData = [
+      {
+        title: "🌱 Stage 1: HTML Basics",
+        tasks: [
+          "HTML Boilerplate & Structure",
+          "Headings, Paragraphs, Lists",
+          "Links, Images, Anchors",
+          "Tables and Forms",
+          "Semantic Tags",
+          "Audio and Video Embeds",
+          "IFrames & Meta Tags"
+        ]
+      },
+      {
+        title: "🎨 Stage 2: CSS Basics",
+        tasks: [
+          "Inline, Internal, and External CSS",
+          "Selectors: class, id, element, universal, descendant",
+          "Colors, Backgrounds, Borders",
+          "Font styling & Google Fonts",
+          "Box Model (padding, margin, border)",
+          "Display, Visibility, Z-index"
+        ]
+      },
+      {
+        title: "📀 Stage 3: Advanced CSS",
+        tasks: [
+          "Positioning: static, relative, absolute, fixed, sticky",
+          "Flexbox (1D layout system)",
+          "Grid Layout (2D layout system)",
+          "Pseudo-classes & Pseudo-elements",
+          "Media Queries & Responsive Design",
+          "CSS Transitions, Transforms, Animations",
+          "Custom Properties (CSS Variables)"
+        ]
+      },
+      {
+        title: "🌟 Stage 4: JavaScript Basics",
+        tasks: [
+          "Variables: let, const, var",
+          "Data Types: Strings, Numbers, Booleans, Arrays, Objects",
+          "Operators & Expressions",
+          "Conditionals: if, else, switch",
+          "Loops: for, while, forEach",
+          "Functions: declarations, expressions, arrow functions",
+          "Events & Event Listeners"
+        ]
+      },
+      {
+        title: "🧠 Stage 5: DOM Manipulation",
+        tasks: [
+          "Selecting Elements",
+          "Changing Styles and Content",
+          "Creating/Removing Elements",
+          "Event Delegation",
+          "Handling Forms and Inputs"
+        ]
+      },
+      {
+        title: "🔄 Stage 6: JS Advanced Concepts",
+        tasks: [
+          "map(), filter(), reduce()",
+          "Object Literals & Destructuring",
+          "Spread and Rest Operators",
+          "ES6+ Syntax and Features",
+          "Scope, Hoisting, Closures",
+          "Callbacks, Promises, Async/Await",
+          "Error Handling"
+        ]
+      },
+      {
+        title: "📊 Stage 7: Web APIs",
+        tasks: [
+          "Fetch API / AJAX / JSON",
+          "LocalStorage / SessionStorage",
+          "Geolocation API",
+          "Clipboard API",
+          "Drag and Drop API",
+          "Web Workers",
+          "Notifications API"
+        ]
+      },
+      {
+        title: "📦 Stage 8: Mini Projects",
+        tasks: [
+          "To-Do List App",
+          "Calculator",
+          "Weather App (using API)",
+          "Quiz App",
+          "Portfolio Website",
+          "Responsive Landing Page",
+          "Countdown Timer",
+          "Form Validation App"
+        ]
+      },
+      {
+        title: "🛠️ Stage 9: Dev Tools & Best Practices",
+        tasks: [
+          "Using Chrome DevTools",
+          "Writing Clean & Maintainable Code",
+          "Mobile-First & Responsive Design",
+          "SEO Basics",
+          "Accessibility (a11y)",
+          "Version Control with Git + GitHub",
+          "Linting & Code Formatters"
+        ]
+      },
+      {
+        title: "⚙️ Stage 10: Tools & Ecosystem",
+        tasks: [
+          "NPM (Node Package Manager)",
+          "ES Modules",
+          "Sass (CSS Preprocessor)",
+          "Tailwind CSS",
+          "Bootstrap / Material UI",
+          "JavaScript Build Tools: Vite, Parcel",
+          "Webpack & Babel"
+        ]
+      },
+      {
+        title: "💡 Stage 11: Frontend Frameworks",
+        tasks: [
+          "Introduction to React",
+          "JSX / Virtual DOM",
+          "Props & State",
+          "Component Lifecycle",
+          "React Router & Hooks",
+          "State Management (Context API, Redux)",
+          "React with Backend (API Integration)"
+        ]
+      },
+      {
+        title: "🏁 Stage 12: Capstone & Real Projects",
+        tasks: [
+          "Clone Websites (Netflix, YouTube, etc.)",
+          "Build a Full Responsive Portfolio Site",
+          "Work on 10+ Real Projects",
+          "Join Hackathons / Challenges",
+          "Collaborate on Open Source Projects",
+          "Write Tech Blogs / Tutorials"
+        ]
+      }
+    ];
+
+    const stagesContainer = document.getElementById("stages");
+
+    stagesData.forEach(stage => {
+      const div = document.createElement("div");
+      div.className = "stage";
+      div.innerHTML = `<h3>${stage.title}</h3>` +
+        stage.tasks.map(task => `<label><input type="checkbox" class="task"> ${task}</label>`).join('') +
+        `<a class="notes-link" href="https://drive.google.com" target="_blank">✉️ Upload Notes</a>`;
+      stagesContainer.appendChild(div);
+    });
+
+    const checkboxes = document.querySelectorAll('.task');
+    const progressBar = document.getElementById('progress-bar');
+    const level = document.getElementById('level');
+
+    function updateProgress() {
+      const total = checkboxes.length;
+      const completed = Array.from(checkboxes).filter(c => c.checked).length;
+      const percent = Math.floor((completed / total) * 100);
+      progressBar.style.width = percent + '%';
+      progressBar.textContent = percent + '%';
+
+      if (percent < 10) level.textContent = '👾 Bot — Just getting started!';
+      else if (percent < 30) level.textContent = '🌱 Beginner — Keep growing your roots!';
+      else if (percent < 60) level.textContent = '⚡ Intermediate — You\'re getting powerful!';
+      else if (percent < 90) level.textContent = '🔥 Pro — Master of the craft!';
+      else level.textContent = '🚀 Pro++ — You\'ve reached the stars!';
+    }
+
+    document.addEventListener("change", updateProgress);
+    window.onload = updateProgress;
+  </script>
+</body>
+</html>
