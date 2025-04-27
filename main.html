@@ -3,144 +3,525 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Roadmap</title>
+    <title>Learning Roadmap | Master Tech Skills</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Global Styles */
-        body {
-            font-family: 'Arial', sans-serif;
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 40px 0;
+            padding: 80px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
         }
 
         header h1 {
-            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         header p {
-            font-size: 1.2em;
-            margin-top: 10px;
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            position: relative;
         }
 
+        .header-decoration {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .decoration-1 {
+            top: -150px;
+            right: -150px;
+        }
+
+        .decoration-2 {
+            bottom: -100px;
+            left: -100px;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Navigation */
         nav {
-            background-color: #34495e;
-            padding: 12px 0;
+            background-color: white;
+            padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
 
-        nav a {
-            color: white;
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
             text-decoration: none;
-            padding: 15px 20px;
-            margin: 0 15px;
-            font-size: 1.1em;
-            display: inline-block;
+            display: flex;
+            align-items: center;
         }
 
-        nav a:hover {
-            background-color: #16a085;
-            border-radius: 5px;
+        .nav-logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 60%;
+        }
+
+        .nav-links a.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
         }
 
         /* Main Content */
         .container {
-            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
         }
 
         h2 {
-            font-size: 2.5em;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
         }
 
-        /* Services Section */
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        /* Cards */
         .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 40px;
-            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            width: 30%;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 30px;
-            flex-grow: 1;
-            flex-shrink: 1;
-            min-width: 270px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
         }
 
         .card h3 {
-            font-size: 1.6em;
-            color: #16a085;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .card h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 70%;
+            background: var(--accent);
+            border-radius: 3px;
         }
 
         .card p {
-            font-size: 1em;
-            color: #7f8c8d;
-            margin-bottom: 20px;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
         }
 
         .card ul {
-            text-align: left;
-            padding-left: 20px;
             list-style-type: none;
-            color: #7f8c8d;
-            margin-bottom: 20px;
+            margin-bottom: 2rem;
         }
 
         .card ul li {
-            margin-bottom: 10px;
-            font-size: 1em;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .card ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--success);
         }
 
         .card a {
-            padding: 12px 20px;
-            background-color: #16a085;
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
         }
 
         .card a:hover {
-            background-color: #1abc9c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+        }
+
+        .card a i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .card a:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Category Badges */
+        .category-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .footer-column h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-column p {
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            list-style-type: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
         }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .card {
-                width: 45%;
+            header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .services {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
         }
 
         @media (max-width: 768px) {
-            .card {
+            header {
+                padding: 60px 0;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
                 width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .container {
+                padding: 2rem 1rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+            
+            .card {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -149,18 +530,32 @@
 
     <!-- Header -->
     <header>
-        <h1>Master Your Learning Path</h1>
-        <p>Explore various roadmap guides for mastering programming, development, AI & ML, and more!</p>
+        <div class="header-decoration decoration-1"></div>
+        <div class="header-decoration decoration-2"></div>
+        <h1 class="floating">Master Your Learning Path</h1>
+        <p>Explore structured roadmap guides to accelerate your tech career</p>
     </header>
 
     <!-- Navigation Bar -->
     <nav>
-        <a href="java.html">Java + DSA</a>
-        <a href="python.html">Python + DSA</a>
-        <a href="frontend.html">Frontend</a>
-        <a href="backend.html">Backend</a>
-        <a href="Aptitude.html">Aptitude</a>
-        <a href="Artificial Intelligence & Machine Learning.html">AI & ML</a>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fas fa-graduation-cap"></i> LearnPath
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="java.html" class="active"><i class="fab fa-java"></i> Java + DSA</a>
+                <a href="python.html"><i class="fab fa-python"></i> Python + DSA</a>
+                <a href="frontend.html"><i class="fas fa-code"></i> Frontend</a>
+                <a href="backend.html"><i class="fas fa-server"></i> Backend</a>
+                <a href="Aptitude.html"><i class="fas fa-brain"></i> Aptitude</a>
+                <a href="Artificial Intelligence & Machine Learning.html"><i class="fas fa-robot"></i> AI & ML</a>
+            </div>
+        </div>
     </nav>
 
     <!-- Main Content -->
@@ -171,26 +566,40 @@
             <h2>Java + DSA Roadmap</h2>
             <div class="services">
                 <div class="card">
+                    <span class="category-badge">Beginner</span>
                     <h3>Java Basics & DSA Concepts</h3>
-                    <p>Start your programming journey by mastering Java and understanding Data Structures & Algorithms.</p>
+                    <p>Build strong programming foundations with Java and essential data structures and algorithms.</p>
                     <ul>
-                        <li>Java Basics: Syntax, Variables, Data Types</li>
-                        <li>Arrays, Linked Lists</li>
+                        <li>Java Syntax, Variables, Data Types</li>
+                        <li>Control Structures & Methods</li>
+                        <li>Arrays, Linked Lists, Stacks</li>
                         <li>Sorting & Searching Algorithms</li>
-                        <li>Advanced Data Structures</li>
                     </ul>
-                    <a href="java.html">Learn More</a>
+                    <a href="java.html">Start Learning <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="card">
+                    <span class="category-badge">Intermediate</span>
                     <h3>Core Java Concepts</h3>
-                    <p>Explore object-oriented programming, collections, and advanced Java topics.</p>
+                    <p>Master object-oriented programming and advanced Java features for professional development.</p>
                     <ul>
-                        <li>Object-Oriented Programming</li>
+                        <li>OOP Principles (Encapsulation, Inheritance)</li>
                         <li>Collections Framework</li>
-                        <li>Exception Handling</li>
-                        <li>File I/O and Multithreading</li>
+                        <li>Exception Handling & File I/O</li>
+                        <li>Multithreading & Concurrency</li>
                     </ul>
-                    <a href="java.html">Learn More</a>
+                    <a href="java.html">Continue Journey <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card">
+                    <span class="category-badge">Advanced</span>
+                    <h3>Advanced DSA & System Design</h3>
+                    <p>Tackle complex problems and learn to design scalable systems with Java.</p>
+                    <ul>
+                        <li>Trees, Graphs, Hash Tables</li>
+                        <li>Dynamic Programming</li>
+                        <li>Design Patterns</li>
+                        <li>System Architecture Basics</li>
+                    </ul>
+                    <a href="java.html">Master Level <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -200,24 +609,40 @@
             <h2>Python + DSA Roadmap</h2>
             <div class="services">
                 <div class="card">
+                    <span class="category-badge">Fundamentals</span>
                     <h3>Python Basics & DSA</h3>
-                    <p>Master Python programming and learn essential data structures and algorithms for problem-solving.</p>
+                    <p>Learn Python programming from scratch and solve problems with efficient algorithms.</p>
                     <ul>
                         <li>Python Syntax & Functions</li>
-                        <li>Data Structures: Lists, Dictionaries</li>
-                        <li>Sorting & Searching Algorithms</li>
+                        <li>Lists, Tuples, Dictionaries</li>
+                        <li>Time & Space Complexity</li>
+                        <li>Recursion & Basic Algorithms</li>
                     </ul>
-                    <a href="python.html">Learn More</a>
+                    <a href="python.html">Begin Path <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="card">
+                    <span class="category-badge">Advanced</span>
                     <h3>Advanced Python & DSA</h3>
-                    <p>Learn advanced Python features and algorithms to tackle complex problems effectively.</p>
+                    <p>Master Python's powerful features and complex data structures for technical interviews.</p>
                     <ul>
-                        <li>Advanced Data Structures: Stacks, Queues</li>
-                        <li>Greedy Algorithms</li>
+                        <li>Generators & Decorators</li>
+                        <li>Graph Algorithms</li>
+                        <li>Greedy & Divide-and-Conquer</li>
                         <li>Dynamic Programming</li>
                     </ul>
-                    <a href="python.html">Learn More</a>
+                    <a href="python.html">Deep Dive <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card">
+                    <span class="category-badge">Applications</span>
+                    <h3>Python for Data Science</h3>
+                    <p>Apply Python skills to data analysis, visualization, and machine learning.</p>
+                    <ul>
+                        <li>NumPy & Pandas</li>
+                        <li>Matplotlib & Seaborn</li>
+                        <li>Basic Machine Learning</li>
+                        <li>Web Scraping</li>
+                    </ul>
+                    <a href="python.html">Explore <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -227,87 +652,7 @@
             <h2>Frontend Development Roadmap</h2>
             <div class="services">
                 <div class="card">
-                    <h3>HTML, CSS, and JavaScript</h3>
-                    <p>Learn the essentials of frontend web development using HTML, CSS, and JavaScript.</p>
-                    <ul>
-                        <li>HTML: Structuring Web Pages</li>
-                        <li>CSS: Layout & Styling</li>
-                        <li>JavaScript: DOM Manipulation</li>
-                    </ul>
-                    <a href="frontend.html">Learn More</a>
-                </div>
-                <div class="card">
-                    <h3>Frontend Frameworks</h3>
-                    <p>Learn to build dynamic websites using modern frontend frameworks like React and Vue.js.</p>
-                    <ul>
-                        <li>React.js</li>
-                        <li>Vue.js</li>
-                        <li>Responsive Web Design</li>
-                    </ul>
-                    <a href="frontend.html">Learn More</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Backend Development -->
-        <section id="backend">
-            <h2>Backend Development Roadmap</h2>
-            <div class="services">
-                <div class="card">
-                    <h3>Backend Fundamentals</h3>
-                    <p>Learn backend development with server-side programming, databases, and APIs.</p>
-                    <ul>
-                        <li>Node.js, Python, Java</li>
-                        <li>Database Fundamentals</li>
-                        <li>REST APIs</li>
-                    </ul>
-                    <a href="backend.html">Learn More</a>
-                </div>
-                <div class="card">
-                    <h3>Advanced Backend Concepts</h3>
-                    <p>Take your backend skills further with advanced topics like microservices, security, and deployment.</p>
-                    <ul>
-                        <li>Microservices Architecture</li>
-                        <li>Authentication (JWT, OAuth)</li>
-                        <li>Cloud Deployment</li>
-                    </ul>
-                    <a href="backend.html">Learn More</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI & ML -->
-        <section id="ai-ml">
-            <h2>AI & ML Roadmap</h2>
-            <div class="services">
-                <div class="card">
-                    <h3>Machine Learning Fundamentals</h3>
-                    <p>Learn the core concepts and techniques in Machine Learning, including algorithms and model training.</p>
-                    <ul>
-                        <li>Supervised Learning</li>
-                        <li>Unsupervised Learning</li>
-                        <li>Regression & Classification</li>
-                    </ul>
-                    <a href="Artificial Intelligence & Machine Learning.html">Learn More</a>
-                </div>
-                <div class="card">
-                    <h3>Deep Learning & AI</h3>
-                    <p>Dive into advanced topics like neural networks, deep learning, and applications of AI in the real world.</p>
-                    <ul>
-                        <li>Neural Networks</li>
-                        <li>Deep Learning with TensorFlow & PyTorch</li>
-                        <li>Natural Language Processing</li>
-                    </ul>
-                    <a href="Artificial Intelligence & Machine Learning.html">Learn More</a>
-                </div>
-            </div>
-        </section>
-
-    </div>
-    <!-- Footer -->
-    <footer style="background-color: #2c3e50; color: white; text-align: center; padding: 20px 0; margin-top: 40px;">
-        <p>Developed by Giri Vennapusa</p>
-    </footer>
-
-</body>
-</html>
+                    <span class="category-badge">Core</span>
+                    <h3>HTML, CSS, JavaScript</h3>
+                    <p>Master the building blocks of modern web development and create interactive websites.</p>
+                    
