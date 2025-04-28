@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Java + DSA Mastery Tracker</title>
+  <title>Python + DSA Mastery Tracker</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
@@ -13,6 +13,8 @@
       --primary: #4361ee;
       --secondary: #3f37c9;
       --accent: #4cc9f0;
+      --python-yellow: #FFD43B;
+      --python-blue: #3776AB;
       --dark: #1a1a2e;
       --light: #f8f9fa;
       --success: #4caf50;
@@ -30,7 +32,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #2a2a3a);
+      background: linear-gradient(135deg, #1f1c2c, #2a2a3a);
       color: #f0f0f0;
       min-height: 100vh;
       padding: 2rem;
@@ -49,11 +51,11 @@
 
     h1 {
       text-align: center;
-      color: #4cc9f0;
+      color: var(--python-yellow);
       font-family: 'Montserrat', sans-serif;
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
-      text-shadow: 0 2px 10px rgba(76, 201, 240, 0.3);
+      text-shadow: 0 2px 10px rgba(255, 212, 59, 0.3);
       position: relative;
       display: inline-block;
       width: 100%;
@@ -67,7 +69,7 @@
       transform: translateX(-50%);
       width: 150px;
       height: 3px;
-      background: linear-gradient(to right, var(--primary), var(--accent));
+      background: linear-gradient(to right, var(--python-yellow), var(--python-blue));
       border-radius: 3px;
     }
 
@@ -95,7 +97,7 @@
 
     .progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, #00ffe5, #5effb2);
+      background: linear-gradient(90deg, var(--python-yellow), var(--python-blue));
       width: 0%;
       border-radius: 30px;
       transition: width 0.5s ease-in-out;
@@ -152,17 +154,17 @@
     }
 
     .stage-label.active::before {
-      background: linear-gradient(135deg, #00ffe5, #5effb2);
-      box-shadow: 0 0 10px rgba(94, 255, 178, 0.5);
+      background: linear-gradient(135deg, var(--python-yellow), var(--python-blue));
+      box-shadow: 0 0 10px rgba(55, 118, 171, 0.5);
     }
 
     .stage {
-      margin-top: 3rem;
+      margin-top: 2rem;
       background: rgba(40, 40, 60, 0.7);
       border-radius: 15px;
       padding: 1.5rem;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      border-left: 5px solid var(--accent);
+      border-left: 5px solid var(--python-blue);
       transition: var(--transition);
     }
 
@@ -171,11 +173,11 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
-    .stage h2 {
-      color: #8be9fd;
+    .stage h3 {
+      color: var(--python-yellow);
       font-family: 'Montserrat', sans-serif;
       margin-bottom: 1.5rem;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -216,7 +218,7 @@
     }
 
     .task-checkbox:checked + .task-label::before {
-      background: linear-gradient(135deg, #00ffe5, #5effb2);
+      background: linear-gradient(135deg, var(--python-yellow), var(--python-blue));
       border-color: transparent;
     }
 
@@ -236,17 +238,17 @@
     }
 
     .task-label:hover {
-      color: #8be9fd;
+      color: var(--python-yellow);
     }
 
     .task-label:hover::before {
-      border-color: #8be9fd;
+      border-color: var(--python-yellow);
     }
 
     .upload-link {
       margin-top: 1rem;
       display: inline-block;
-      background: rgba(76, 201, 240, 0.1);
+      background: rgba(55, 118, 171, 0.1);
       padding: 0.5rem 1rem;
       border-radius: 50px;
       font-size: 0.9rem;
@@ -254,7 +256,7 @@
     }
 
     .upload-link a {
-      color: #ffcc00;
+      color: var(--python-yellow);
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -262,7 +264,7 @@
     }
 
     .upload-link:hover {
-      background: rgba(76, 201, 240, 0.2);
+      background: rgba(55, 118, 171, 0.2);
       transform: translateY(-2px);
     }
 
@@ -276,15 +278,15 @@
       left: 50%;
       transform: translate(-50%, -50%) scale(0);
       background: #282c34;
-      color: #00ffe5;
+      color: var(--python-yellow);
       padding: 2rem 3rem;
       border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0, 255, 229, 0.5);
+      box-shadow: 0 0 25px rgba(255, 212, 59, 0.5);
       z-index: 999;
       transition: var(--transition);
       text-align: center;
       max-width: 80%;
-      border: 1px solid rgba(0, 255, 229, 0.3);
+      border: 1px solid rgba(255, 212, 59, 0.3);
       font-family: 'Montserrat', sans-serif;
       font-size: 1.2rem;
     }
@@ -293,8 +295,29 @@
       transform: translate(-50%, -50%) scale(1);
     }
 
+    .level {
+      text-align: center;
+      font-size: 1.3rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 15px rgba(255, 212, 59, 0.2);
+      border: 1px solid rgba(255, 212, 59, 0.1);
+      transition: var(--transition);
+    }
+
+    .level:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(255, 212, 59, 0.3);
+    }
+
     .stage-completion {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       text-align: center;
       font-size: 0.9rem;
       color: #aaa;
@@ -348,124 +371,362 @@
   </style>
 </head>
 <body>
-  <h1>🚀 Python + DSA Mastery Tracker</h1>
-  <div class="progress-container">
-    <div class="progress-bar" id="progress-bar">0%</div>
+  <div class="tracker-container">
+    <h1><i class="fab fa-python"></i> Python + DSA Mastery Tracker</h1>
+    
+    <div class="progress-container">
+      <div class="progress-info">
+        <span id="completedCount">0</span> of <span id="totalCount">0</span> tasks completed
+        <span id="percentage">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="stage-labels">
+        <div class="stage-label" id="label1">👾 Bot</div>
+        <div class="stage-label" id="label2">🌱 Beginner</div>
+        <div class="stage-label" id="label3">⚡ Intermediate</div>
+        <div class="stage-label" id="label4">🔥 Pro</div>
+        <div class="stage-label" id="label5">🚀 Pro+</div>
+      </div> 
+    </div>
+
+    <div class="level" id="level">👾 Bot you are the bot in the python! learn to achive the 🌱 Beginner badge</div>
+
+    <div class="stage" id="stage1">
+      <h3><i class="fas fa-seedling"></i> Stage 1: Python Basics (Beginner)</h3>
+      <ul class="task-list">
+        <li class="task-item">
+          <input type="checkbox" id="task1" class="task-checkbox">
+          <label for="task1" class="task-label">Python Installation & Setup</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task2" class="task-checkbox">
+          <label for="task2" class="task-label">Hello World & Print Statements</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task3" class="task-checkbox">
+          <label for="task3" class="task-label">Variables & Data Types</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task4" class="task-checkbox">
+          <label for="task4" class="task-label">Input/Output</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task5" class="task-checkbox">
+          <label for="task5" class="task-label">Comments</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task6" class="task-checkbox">
+          <label for="task6" class="task-label">Basic Math Operators</label>
+        </li>
+      </ul>
+      <div class="upload-link">
+        <a href="https://drive.google.com" target="_blank">
+          <i class="fas fa-file-pdf"></i> Python Basics Notes
+        </a>
+      </div>
+      <div class="stage-completion" id="stage1Completion">0/6 completed</div>
+    </div>
+
+    <div class="stage" id="stage2">
+      <h3><i class="fas fa-random"></i> Stage 2: Flow Control</h3>
+      <ul class="task-list">
+        <li class="task-item">
+          <input type="checkbox" id="task7" class="task-checkbox">
+          <label for="task7" class="task-label">If/Else Conditions</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task8" class="task-checkbox">
+          <label for="task8" class="task-label">Nested Conditions</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task9" class="task-checkbox">
+          <label for="task9" class="task-label">Loops (for, while)</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task10" class="task-checkbox">
+          <label for="task10" class="task-label">Break & Continue</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task11" class="task-checkbox">
+          <label for="task11" class="task-label">Pattern Printing</label>
+        </li>
+      </ul>
+      <div class="upload-link">
+        <a href="https://drive.google.com" target="_blank">
+          <i class="fas fa-file-pdf"></i> Flow Control Notes
+        </a>
+      </div>
+      <div class="stage-completion" id="stage2Completion">0/5 completed</div>
+    </div>
+
+    <div class="stage" id="stage3">
+      <h3><i class="fas fa-code-branch"></i> Stage 3: Functions & Recursion</h3>
+      <ul class="task-list">
+        <li class="task-item">
+          <input type="checkbox" id="task12" class="task-checkbox">
+          <label for="task12" class="task-label">Defining and Calling Functions</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task13" class="task-checkbox">
+          <label for="task13" class="task-label">Parameters and Return Values</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task14" class="task-checkbox">
+          <label for="task14" class="task-label">Scope (local/global)</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task15" class="task-checkbox">
+          <label for="task15" class="task-label">Recursion Basics</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task16" class="task-checkbox">
+          <label for="task16" class="task-label">Factorial, Fibonacci with Recursion</label>
+        </li>
+      </ul>
+      <div class="upload-link">
+        <a href="https://drive.google.com" target="_blank">
+          <i class="fas fa-file-pdf"></i> Functions & Recursion Notes
+        </a>
+      </div>
+      <div class="stage-completion" id="stage3Completion">0/5 completed</div>
+    </div>
+
+    <div class="stage" id="stage4">
+      <h3><i class="fas fa-database"></i> Stage 4: Data Structures in Python</h3>
+      <ul class="task-list">
+        <li class="task-item">
+          <input type="checkbox" id="task17" class="task-checkbox">
+          <label for="task17" class="task-label">Lists, Tuples</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task18" class="task-checkbox">
+          <label for="task18" class="task-label">Sets and Dictionaries</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task19" class="task-checkbox">
+          <label for="task19" class="task-label">List Comprehensions</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task20" class="task-checkbox">
+          <label for="task20" class="task-label">Sorting and Slicing</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task21" class="task-checkbox">
+          <label for="task21" class="task-label">Nested Structures</label>
+        </li>
+      </ul>
+      <div class="upload-link">
+        <a href="https://drive.google.com" target="_blank">
+          <i class="fas fa-file-pdf"></i> Data Structures Notes
+        </a>
+      </div>
+      <div class="stage-completion" id="stage4Completion">0/5 completed</div>
+    </div>
+
+    <div class="stage" id="stage5">
+      <h3><i class="fas fa-object-group"></i> Stage 5: OOP</h3>
+      <ul class="task-list">
+        <li class="task-item">
+          <input type="checkbox" id="task22" class="task-checkbox">
+          <label for="task22" class="task-label">Classes and Objects</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task23" class="task-checkbox">
+          <label for="task23" class="task-label">Constructors</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task24" class="task-checkbox">
+          <label for="task24" class="task-label">Inheritance</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task25" class="task-checkbox">
+          <label for="task25" class="task-label">Polymorphism</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task26" class="task-checkbox">
+          <label for="task26" class="task-label">Encapsulation</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task27" class="task-checkbox">
+          <label for="task27" class="task-label">Dunder Methods</label>
+        </li>
+      </ul>
+      <div class="upload-link">
+        <a href="https://drive.google.com" target="_blank">
+          <i class="fas fa-file-pdf"></i> OOP Notes
+        </a>
+      </div>
+      <div class="stage-completion" id="stage5Completion">0/6 completed</div>
+    </div>
+
+    <div class="stage" id="stage6">
+      <h3><i class="fas fa-brain"></i> Stage 6: Essential Algorithms</h3>
+      <ul class="task-list">
+        <li class="task-item">
+          <input type="checkbox" id="task28" class="task-checkbox">
+          <label for="task28" class="task-label">Time & Space Complexity</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task29" class="task-checkbox">
+          <label for="task29" class="task-label">Searching: Linear & Binary</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task30" class="task-checkbox">
+          <label for="task30" class="task-label">Sorting: Bubble, Selection, etc.</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task31" class="task-checkbox">
+          <label for="task31" class="task-label">Recursion Optimization</label>
+        </li>
+      </ul>
+      <div class="upload-link">
+        <a href="https://drive.google.com" target="_blank">
+          <i class="fas fa-file-pdf"></i> Algorithms Notes
+        </a>
+      </div>
+      <div class="stage-completion" id="stage6Completion">0/4 completed</div>
+    </div>
+
+    <div class="stage" id="stage7">
+      <h3><i class="fas fa-project-diagram"></i> Stage 7: Advanced DSA</h3>
+      <ul class="task-list">
+        <li class="task-item">
+          <input type="checkbox" id="task32" class="task-checkbox">
+          <label for="task32" class="task-label">Stacks and Queues</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task33" class="task-checkbox">
+          <label for="task33" class="task-label">Linked Lists</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task34" class="task-checkbox">
+          <label for="task34" class="task-label">Hashmaps</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task35" class="task-checkbox">
+          <label for="task35" class="task-label">Trees</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task36" class="task-checkbox">
+          <label for="task36" class="task-label">Tree Traversals</label>
+        </li>
+      </ul>
+      <div class="upload-link">
+        <a href="https://drive.google.com" target="_blank">
+          <i class="fas fa-file-pdf"></i> Advanced DSA Notes
+        </a>
+      </div>
+      <div class="stage-completion" id="stage7Completion">0/5 completed</div>
+    </div>
+
+    <div class="stage" id="stage8">
+      <h3><i class="fas fa-network-wired"></i> Stage 8: Graphs & DP</h3>
+      <ul class="task-list">
+        <li class="task-item">
+          <input type="checkbox" id="task37" class="task-checkbox">
+          <label for="task37" class="task-label">Graph Representations</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task38" class="task-checkbox">
+          <label for="task38" class="task-label">BFS and DFS</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task39" class="task-checkbox">
+          <label for="task39" class="task-label">Dijkstra's Algorithm</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task40" class="task-checkbox">
+          <label for="task40" class="task-label">Topological Sort</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task41" class="task-checkbox">
+          <label for="task41" class="task-label">Dynamic Programming</label>
+        </li>
+      </ul>
+      <div class="upload-link">
+        <a href="https://drive.google.com" target="_blank">
+          <i class="fas fa-file-pdf"></i> Graphs & DP Notes
+        </a>
+      </div>
+      <div class="stage-completion" id="stage8Completion">0/5 completed</div>
+    </div>
+
+    <div class="stage" id="stage9">
+      <h3><i class="fas fa-globe"></i> Stage 9: Real-World Applications</h3>
+      <ul class="task-list">
+        <li class="task-item">
+          <input type="checkbox" id="task42" class="task-checkbox">
+          <label for="task42" class="task-label">File Handling</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task43" class="task-checkbox">
+          <label for="task43" class="task-label">Exception Handling</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task44" class="task-checkbox">
+          <label for="task44" class="task-label">Modules and Packages</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task45" class="task-checkbox">
+          <label for="task45" class="task-label">Working with APIs</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task46" class="task-checkbox">
+          <label for="task46" class="task-label">Web Scraping</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task47" class="task-checkbox">
+          <label for="task47" class="task-label">Intro to Databases</label>
+        </li>
+      </ul>
+      <div class="upload-link">
+        <a href="https://drive.google.com" target="_blank">
+          <i class="fas fa-file-pdf"></i> Real-World Applications Notes
+        </a>
+      </div>
+      <div class="stage-completion" id="stage9Completion">0/6 completed</div>
+    </div>
+
+    <div class="stage" id="stage10">
+      <h3><i class="fas fa-rocket"></i> Stage 10: Projects & Practice</h3>
+      <ul class="task-list">
+        <li class="task-item">
+          <input type="checkbox" id="task48" class="task-checkbox">
+          <label for="task48" class="task-label">Quiz App / Calculator</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task49" class="task-checkbox">
+          <label for="task49" class="task-label">Task Manager CLI</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task50" class="task-checkbox">
+          <label for="task50" class="task-label">DSA Visualizer</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task51" class="task-checkbox">
+          <label for="task51" class="task-label">File Organizer</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task52" class="task-checkbox">
+          <label for="task52" class="task-label">Solve 100+ DSA Problems</label>
+        </li>
+        <li class="task-item">
+          <input type="checkbox" id="task53" class="task-checkbox">
+          <label for="task53" class="task-label">Mock Interviews</label>
+        </li>
+      </ul>
+      <div class="upload-link">
+        <a href="https://drive.google.com" target="_blank">
+          <i class="fas fa-file-pdf"></i> Projects & Practice Notes
+        </a>
+      </div>
+      <div class="stage-completion" id="stage10Completion">0/6 completed</div>
+    </div>
   </div>
-  <div class="level" id="level">👾 Bot</div>
 
-  <div class="stage">
-    <h3>🌱 Stage 1: Python Basics (Beginner)</h3>
-    <label><input type="checkbox" class="task"> Python Installation & Setup</label>
-    <label><input type="checkbox" class="task"> Hello World & Print Statements</label>
-    <label><input type="checkbox" class="task"> Variables & Data Types</label>
-    <label><input type="checkbox" class="task"> Input/Output</label>
-    <label><input type="checkbox" class="task"> Comments</label>
-    <label><input type="checkbox" class="task"> Basic Math Operators</label>
-<div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
-
-  </div>
-
-  <div class="stage">
-    <h3>🌟 Stage 2: Flow Control</h3>
-    <label><input type="checkbox" class="task"> If/Else Conditions</label>
-    <label><input type="checkbox" class="task"> Nested Conditions</label>
-    <label><input type="checkbox" class="task"> Loops (for, while)</label>
-    <label><input type="checkbox" class="task"> Break & Continue</label>
-    <label><input type="checkbox" class="task"> Pattern Printing</label>
-<div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
-
-  </div>
-
-  <div class="stage">
-    <h3>🔁 Stage 3: Functions & Recursion</h3>
-    <label><input type="checkbox" class="task"> Defining and Calling Functions</label>
-    <label><input type="checkbox" class="task"> Parameters and Return Values</label>
-    <label><input type="checkbox" class="task"> Scope (local/global)</label>
-    <label><input type="checkbox" class="task"> Recursion Basics</label>
-    <label><input type="checkbox" class="task"> Factorial, Fibonacci with Recursion</label>
-<div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
-
-  </div>
-
-  <div class="stage">
-    <h3>🧺 Stage 4: Data Structures in Python</h3>
-    <label><input type="checkbox" class="task"> Lists, Tuples</label>
-    <label><input type="checkbox" class="task"> Sets and Dictionaries</label>
-    <label><input type="checkbox" class="task"> List Comprehensions</label>
-    <label><input type="checkbox" class="task"> Sorting and Slicing</label>
-    <label><input type="checkbox" class="task"> Nested Structures</label>
-<div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
-
-  </div>
-
-  <div class="stage">
-    <h3>⚙️ Stage 5: OOP</h3>
-    <label><input type="checkbox" class="task"> Classes and Objects</label>
-    <label><input type="checkbox" class="task"> Constructors</label>
-    <label><input type="checkbox" class="task"> Inheritance</label>
-    <label><input type="checkbox" class="task"> Polymorphism</label>
-    <label><input type="checkbox" class="task"> Encapsulation</label>
-    <label><input type="checkbox" class="task"> Dunder Methods</label>
-<div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
-
-  </div>
-
-  <div class="stage">
-    <h3>🧠 Stage 6: Essential Algorithms</h3>
-    <label><input type="checkbox" class="task"> Time & Space Complexity</label>
-    <label><input type="checkbox" class="task"> Searching: Linear & Binary</label>
-    <label><input type="checkbox" class="task"> Sorting: Bubble, Selection, etc.</label>
-    <label><input type="checkbox" class="task"> Recursion Optimization</label>
-<div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
-
-  </div>
-
-  <div class="stage">
-    <h3>🗃️ Stage 7: Advanced DSA</h3>
-    <label><input type="checkbox" class="task"> Stacks and Queues</label>
-    <label><input type="checkbox" class="task"> Linked Lists</label>
-    <label><input type="checkbox" class="task"> Hashmaps</label>
-    <label><input type="checkbox" class="task"> Trees</label>
-    <label><input type="checkbox" class="task"> Tree Traversals</label>
-<div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
-
-  </div>
-
-  <div class="stage">
-    <h3>🔗 Stage 8: Graphs & DP</h3>
-    <label><input type="checkbox" class="task"> Graph Representations</label>
-    <label><input type="checkbox" class="task"> BFS and DFS</label>
-    <label><input type="checkbox" class="task"> Dijkstra's Algorithm</label>
-    <label><input type="checkbox" class="task"> Topological Sort</label>
-    <label><input type="checkbox" class="task"> Dynamic Programming</label>
-<div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
-
-  </div>
-
-  <div class="stage">
-    <h3>📦 Stage 9: Real-World Applications</h3>
-    <label><input type="checkbox" class="task"> File Handling</label>
-    <label><input type="checkbox" class="task"> Exception Handling</label>
-    <label><input type="checkbox" class="task"> Modules and Packages</label>
-    <label><input type="checkbox" class="task"> Working with APIs</label>
-    <label><input type="checkbox" class="task"> Web Scraping</label>
-    <label><input type="checkbox" class="task"> Intro to Databases</label>
-<div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
-
-  </div>
-
-  <div class="stage">
-    <h3>🎯 Stage 10: Projects & Practice</h3>
-    <label><input type="checkbox" class="task"> Quiz App / Calculator</label>
-    <label><input type="checkbox" class="task"> Task Manager CLI</label>
-    <label><input type="checkbox" class="task"> DSA Visualizer</label>
-    <label><input type="checkbox" class="task"> File Organizer</label>
-    <label><input type="checkbox" class="task"> Solve 100+ DSA Problems</label>
-    <label><input type="checkbox" class="task"> Mock Interviews</label>
-<div class="upload-link">📂 <a href="https://drive.google.com" target="_blank">Upload Notes</a></div>
-
-  </div>
+  <div class="popup" id="popup"></div>
 
   <script>
     const tasks = document.querySelectorAll(".task-checkbox");
@@ -474,6 +735,7 @@
     const completedCount = document.getElementById("completedCount");
     const totalCount = document.getElementById("totalCount");
     const percentage = document.getElementById("percentage");
+    const level = document.getElementById("level");
     const stageLabels = [
       document.getElementById("label1"),
       document.getElementById("label2"),
@@ -492,31 +754,36 @@
       
       // Update progress bar
       progressFill.style.width = `${percent}%`;
+      percentage.textContent = `${percent}%`;
       
       // Update counters
       completedCount.textContent = completed;
-      percentage.textContent = `${percent}%`;
       
       // Update stage completion indicators
       updateStageCompletions();
       
-      // Update level indicators
+      // Update level indicators and text
       updateLevelIndicators(percent);
       
       // Show appropriate popup
       showLevelPopup(percent);
+      
+      // Save progress
+      saveProgress();
     }
 
     function updateStageCompletions() {
       const stages = [
-        { start: 1, end: 8, element: "stage1Completion" },
-        { start: 9, end: 15, element: "stage2Completion" },
-        { start: 16, end: 21, element: "stage3Completion" },
-        { start: 22, end: 27, element: "stage4Completion" },
-        { start: 28, end: 34, element: "stage5Completion" },
-        { start: 35, end: 40, element: "stage6Completion" },
-        { start: 41, end: 45, element: "stage7Completion" },
-        { start: 46, end: 49, element: "stage8Completion" }
+        { start: 1, end: 6, element: "stage1Completion" },
+        { start: 7, end: 11, element: "stage2Completion" },
+        { start: 12, end: 16, element: "stage3Completion" },
+        { start: 17, end: 21, element: "stage4Completion" },
+        { start: 22, end: 27, element: "stage5Completion" },
+        { start: 28, end: 31, element: "stage6Completion" },
+        { start: 32, end: 36, element: "stage7Completion" },
+        { start: 37, end: 41, element: "stage8Completion" },
+        { start: 42, end: 47, element: "stage9Completion" },
+        { start: 48, end: 53, element: "stage10Completion" }
       ];
       
       stages.forEach(stage => {
@@ -533,32 +800,37 @@
       stageLabels.forEach(label => label.classList.remove("active"));
       
       // Add active class based on progress
-      if (percent >= 0 && percent < 20) {
+      if (percent < 10) {
         stageLabels[0].classList.add("active");
-      } else if (percent >= 20 && percent < 40) {
+        level.textContent = "👾 Bot you are the bot in the python! learn to achive the 🌱 Beginner badge";
+      } else if (percent < 30) {
         stageLabels[1].classList.add("active");
-      } else if (percent >= 40 && percent < 60) {
+        level.textContent = "🌱 Beginner you are the beginner in the python! learn to achive the ⚡ Intermediate badge";
+      } else if (percent < 60) {
         stageLabels[2].classList.add("active");
-      } else if (percent >= 60 && percent < 85) {
+        level.textContent = "⚡ Intermediate you are the Intermediate in the python! learn to achive the 🔥 Pro badge";
+      } else if (percent < 90) {
         stageLabels[3].classList.add("active");
-      } else if (percent >= 85 && percent <= 100) {
+        level.textContent = "🔥 Pro you are the pro in the python! learn to achive the 🚀 Pro+ badge";
+      } else {
         stageLabels[4].classList.add("active");
+        level.textContent = "🚀 Pro+ You are the pro+ in the python but practice more";
       }
     }
 
     function showLevelPopup(percent) {
       let message = "";
       
-      if (percent >= 0 && percent < 20) {
-        message = "👶 Welcome to the journey, Bot! Keep going!";
-      } else if (percent >= 20 && percent < 40) {
-        message = "📘 Level Up! You're a Beginner now!";
-      } else if (percent >= 40 && percent < 60) {
-        message = "🔁 You're getting strong! Intermediate reached!";
-      } else if (percent >= 60 && percent < 85) {
-        message = "💡 Almost there! Welcome to Pro stage!";
-      } else if (percent >= 85 && percent <= 100) {
-        message = "🔥 Mastery unlocked! You're Pro+! 🎉";
+      if (percent >= 0 && percent < 10) {
+        message = "👾 Welcome to Python! Keep going to reach Beginner level!";
+      } else if (percent >= 10 && percent < 30) {
+        message = "🌱 Level Up! You're a Beginner now!";
+      } else if (percent >= 30 && percent < 60) {
+        message = "⚡ You're getting strong! Intermediate reached!";
+      } else if (percent >= 60 && percent < 90) {
+        message = "🔥 Almost there! Welcome to Pro stage!";
+      } else if (percent >= 90 && percent <= 100) {
+        message = "🚀 Mastery unlocked! You're Pro+! 🎉";
       }
       
       // Only show popup if there's a message and it's different from last time
@@ -570,23 +842,32 @@
       }
     }
 
+    // Save progress to localStorage
+    function saveProgress() {
+      tasks.forEach((task, index) => {
+        localStorage.setItem(`task_${index}`, task.checked);
+      });
+    }
+
     // Load progress from localStorage
-    window.onload = function () {
+    function loadProgress() {
       tasks.forEach((task, index) => {
         const saved = localStorage.getItem(`task_${index}`);
-        if (saved === "true") {
+        if (saved === 'true') {
           task.checked = true;
         }
-        
-        // Add event listener to each task
-        task.addEventListener("change", () => {
-          localStorage.setItem(`task_${index}`, task.checked);
-          updateProgress();
-        });
       });
-      
-      // Initialize progress display
+    }
+
+    // Initialize on page load
+    window.onload = () => {
+      loadProgress();
       updateProgress();
+      
+      // Add event listeners to all checkboxes
+      tasks.forEach(task => {
+        task.addEventListener('change', updateProgress);
+      });
     };
   </script>
 </body>
