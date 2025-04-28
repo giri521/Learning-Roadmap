@@ -1,77 +1,426 @@
-<!-- 💻 HTML + CSS + JavaScript Mastery Tracker -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HTML + CSS + JS Mastery Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #000046, #1CB5E0);
-      color: #fff;
+    :root {
+      --html-color: #e34c26;
+      --css-color: #2965f1;
+      --js-color: #f0db4f;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+      --success: #4caf50;
+      --warning: #ff9800;
+      --danger: #f44336;
+      --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #000046, #1CB5E0);
+      color: #f0f0f0;
+      min-height: 100vh;
       padding: 2rem;
     }
-    h1, h2 {
-      text-align: center;
-    }
-    .stage {
-      background-color: rgba(255, 255, 255, 0.1);
-      margin: 1rem 0;
-      padding: 1rem;
-      border-radius: 10px;
-    }
-    .stage h3 {
-      margin-top: 0;
-      color: #ffd700;
-    }
-    label {
-      display: block;
-      margin: 0.5rem 0;
-    }
-    .notes-link {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #00ffcc;
-      color: #000;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .progress-container {
-      background: #444;
+
+    .tracker-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(44, 44, 62, 0.9);
       border-radius: 20px;
-      margin: 1rem auto;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 4px;
+      background: linear-gradient(to right, var(--html-color), var(--css-color), var(--js-color));
+      border-radius: 3px;
+    }
+
+    .progress-container {
+      margin: 2rem 0;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background-color: rgba(68, 68, 68, 0.5);
+      border-radius: 30px;
       height: 30px;
-      width: 80%;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--html-color), var(--css-color), var(--js-color));
+      width: 0%;
+      border-radius: 30px;
+      transition: width 0.5s ease-in-out;
+      position: relative;
       overflow: hidden;
     }
-    .progress-bar {
-      height: 100%;
-      background: linear-gradient(to right, #00ff88, #00ccff);
-      width: 0%;
-      text-align: center;
-      line-height: 30px;
-      color: #000;
-      font-weight: bold;
+
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.1)
+      );
+      animation: shimmer 2s infinite;
     }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .stage-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .stage-label {
+      text-align: center;
+      flex: 1;
+      position: relative;
+    }
+
+    .stage-label::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #444;
+      border: 2px solid #333;
+    }
+
+    .stage-label.active::before {
+      background: linear-gradient(135deg, var(--html-color), var(--css-color), var(--js-color));
+      box-shadow: 0 0 10px rgba(41, 101, 241, 0.5);
+    }
+
+    .stage {
+      margin-top: 2rem;
+      background: rgba(40, 40, 60, 0.7);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      border-left: 5px solid;
+      transition: var(--transition);
+    }
+
+    .stage-html { border-left-color: var(--html-color); }
+    .stage-css { border-left-color: var(--css-color); }
+    .stage-js { border-left-color: var(--js-color); }
+    .stage-projects { border-left-color: #00ff88; }
+    .stage-tools { border-left-color: #9c27b0; }
+    .stage-frameworks { border-left-color: #61dafb; }
+
+    .stage:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .stage h3 {
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .stage-html h3 { color: var(--html-color); }
+    .stage-css h3 { color: var(--css-color); }
+    .stage-js h3 { color: var(--js-color); }
+    .stage-projects h3 { color: #00ff88; }
+    .stage-tools h3 { color: #9c27b0; }
+    .stage-frameworks h3 { color: #61dafb; }
+
+    .task-list {
+      list-style: none;
+    }
+
+    .task-item {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 2.5rem;
+    }
+
+    .task-checkbox {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .task-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .task-label::before {
+      content: '';
+      width: 22px;
+      height: 22px;
+      border: 2px solid #555;
+      border-radius: 6px;
+      position: absolute;
+      left: -2.5rem;
+      transition: var(--transition);
+    }
+
+    .stage-html .task-checkbox:checked + .task-label::before {
+      background: var(--html-color);
+      border-color: transparent;
+    }
+    .stage-css .task-checkbox:checked + .task-label::before {
+      background: var(--css-color);
+      border-color: transparent;
+    }
+    .stage-js .task-checkbox:checked + .task-label::before {
+      background: var(--js-color);
+      border-color: transparent;
+    }
+    .stage-projects .task-checkbox:checked + .task-label::before {
+      background: #00ff88;
+      border-color: transparent;
+    }
+    .stage-tools .task-checkbox:checked + .task-label::before {
+      background: #9c27b0;
+      border-color: transparent;
+    }
+    .stage-frameworks .task-checkbox:checked + .task-label::before {
+      background: #61dafb;
+      border-color: transparent;
+    }
+
+    .task-checkbox:checked + .task-label::after {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: white;
+      position: absolute;
+      left: -2.3rem;
+      font-size: 0.8rem;
+    }
+
+    .task-checkbox:checked + .task-label {
+      color: #aaa;
+      text-decoration: line-through;
+    }
+
+    .task-label:hover {
+      color: #aefeff;
+    }
+
+    .task-label:hover::before {
+      border-color: currentColor;
+    }
+
+    .notes-link {
+      margin-top: 1rem;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      text-decoration: none;
+      color: white;
+    }
+
+    .notes-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .notes-link i {
+      margin-right: 8px;
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: #282c34;
+      color: #00ff88;
+      padding: 2rem 3rem;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
+      z-index: 999;
+      transition: var(--transition);
+      text-align: center;
+      max-width: 80%;
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+    }
+
+    .popup.show {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
     .level {
       text-align: center;
-      font-size: 1.2rem;
-      margin: 1rem 0;
+      font-size: 1.3rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+      border: 1px solid rgba(0, 255, 136, 0.1);
+      transition: var(--transition);
+    }
+
+    .level:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    }
+
+    .stage-completion {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+
+      .tracker-container {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .stage-labels {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .stage-label {
+        flex: 0 0 calc(50% - 10px);
+        font-size: 0.8rem;
+      }
+
+      .stage {
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .stage-label {
+        flex: 0 0 100%;
+        text-align: left;
+        padding-left: 20px;
+      }
+
+      .stage-label::before {
+        left: 0;
+        transform: none;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>💻 HTML + CSS + JavaScript Mastery Tracker</h1>
-  <div class="progress-container">
-    <div class="progress-bar" id="progress-bar">0%</div>
-  </div>
-  <div class="level" id="level">👾 Bot</div>
+  <div class="tracker-container">
+    <h1><i class="fab fa-html5" style="color: var(--html-color);"></i> <i class="fab fa-css3-alt" style="color: var(--css-color);"></i> <i class="fab fa-js" style="color: var(--js-color);"></i> Web Development Mastery Tracker</h1>
+    
+    <div class="progress-container">
+      <div class="progress-info">
+        <span id="completedCount">0</span> of <span id="totalCount">0</span> tasks completed
+        <span id="percentage">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="stage-labels">
+        <div class="stage-label" id="label1">👾 Bot</div>
+        <div class="stage-label" id="label2">🌱 Beginner</div>
+        <div class="stage-label" id="label3">⚡ Intermediate</div>
+        <div class="stage-label" id="label4">🔥 Pro</div>
+        <div class="stage-label" id="label5">🚀 Pro+</div>
+      </div> 
+    </div>
 
-  <div id="stages"></div>
+    <div class="level" id="level">👾 Bot — Just getting started!</div>
+
+    <div id="stages"></div>
+  </div>
+
+  <div class="popup" id="popup"></div>
 
   <script>
     const stagesData = [
@@ -85,7 +434,8 @@
           "Semantic Tags",
           "Audio and Video Embeds",
           "IFrames & Meta Tags"
-        ]
+        ],
+        type: "html"
       },
       {
         title: "🎨 Stage 2: CSS Basics",
@@ -96,7 +446,8 @@
           "Font styling & Google Fonts",
           "Box Model (padding, margin, border)",
           "Display, Visibility, Z-index"
-        ]
+        ],
+        type: "css"
       },
       {
         title: "📀 Stage 3: Advanced CSS",
@@ -108,7 +459,8 @@
           "Media Queries & Responsive Design",
           "CSS Transitions, Transforms, Animations",
           "Custom Properties (CSS Variables)"
-        ]
+        ],
+        type: "css"
       },
       {
         title: "🌟 Stage 4: JavaScript Basics",
@@ -120,7 +472,8 @@
           "Loops: for, while, forEach",
           "Functions: declarations, expressions, arrow functions",
           "Events & Event Listeners"
-        ]
+        ],
+        type: "js"
       },
       {
         title: "🧠 Stage 5: DOM Manipulation",
@@ -130,7 +483,8 @@
           "Creating/Removing Elements",
           "Event Delegation",
           "Handling Forms and Inputs"
-        ]
+        ],
+        type: "js"
       },
       {
         title: "🔄 Stage 6: JS Advanced Concepts",
@@ -142,7 +496,8 @@
           "Scope, Hoisting, Closures",
           "Callbacks, Promises, Async/Await",
           "Error Handling"
-        ]
+        ],
+        type: "js"
       },
       {
         title: "📊 Stage 7: Web APIs",
@@ -154,7 +509,8 @@
           "Drag and Drop API",
           "Web Workers",
           "Notifications API"
-        ]
+        ],
+        type: "js"
       },
       {
         title: "📦 Stage 8: Mini Projects",
@@ -167,7 +523,8 @@
           "Responsive Landing Page",
           "Countdown Timer",
           "Form Validation App"
-        ]
+        ],
+        type: "projects"
       },
       {
         title: "🛠️ Stage 9: Dev Tools & Best Practices",
@@ -179,7 +536,8 @@
           "Accessibility (a11y)",
           "Version Control with Git + GitHub",
           "Linting & Code Formatters"
-        ]
+        ],
+        type: "tools"
       },
       {
         title: "⚙️ Stage 10: Tools & Ecosystem",
@@ -191,7 +549,8 @@
           "Bootstrap / Material UI",
           "JavaScript Build Tools: Vite, Parcel",
           "Webpack & Babel"
-        ]
+        ],
+        type: "tools"
       },
       {
         title: "💡 Stage 11: Frontend Frameworks",
@@ -203,7 +562,8 @@
           "React Router & Hooks",
           "State Management (Context API, Redux)",
           "React with Backend (API Integration)"
-        ]
+        ],
+        type: "frameworks"
       },
       {
         title: "🏁 Stage 12: Capstone & Real Projects",
@@ -214,41 +574,186 @@
           "Join Hackathons / Challenges",
           "Collaborate on Open Source Projects",
           "Write Tech Blogs / Tutorials"
-        ]
+        ],
+        type: "projects"
       }
     ];
 
     const stagesContainer = document.getElementById("stages");
+    const progressFill = document.getElementById("progressFill");
+    const popup = document.getElementById("popup");
+    const completedCount = document.getElementById("completedCount");
+    const totalCount = document.getElementById("totalCount");
+    const percentage = document.getElementById("percentage");
+    const level = document.getElementById("level");
+    const stageLabels = [
+      document.getElementById("label1"),
+      document.getElementById("label2"),
+      document.getElementById("label3"),
+      document.getElementById("label4"),
+      document.getElementById("label5")
+    ];
 
-    stagesData.forEach(stage => {
+    // Initialize counts
+    let totalTasks = 0;
+    stagesData.forEach(stage => totalTasks += stage.tasks.length);
+    totalCount.textContent = totalTasks;
+
+    // Create stages dynamically
+    stagesData.forEach((stage, stageIndex) => {
       const div = document.createElement("div");
-      div.className = "stage";
-      div.innerHTML = `<h3>${stage.title}</h3>` +
-        stage.tasks.map(task => `<label><input type="checkbox" class="task"> ${task}</label>`).join('') +
-        `<a class="notes-link" href="https://drive.google.com" target="_blank">✉️ Upload Notes</a>`;
+      div.className = `stage stage-${stage.type}`;
+      
+      let tasksHTML = '';
+      stage.tasks.forEach((task, taskIndex) => {
+        const globalIndex = getGlobalIndex(stageIndex, taskIndex);
+        tasksHTML += `
+          <li class="task-item">
+            <input type="checkbox" id="task${globalIndex}" class="task-checkbox">
+            <label for="task${globalIndex}" class="task-label">${task}</label>
+          </li>
+        `;
+      });
+      
+      div.innerHTML = `
+        <h3>${stage.title}</h3>
+        <ul class="task-list">${tasksHTML}</ul>
+        <a class="notes-link" href="https://drive.google.com" target="_blank">
+          <i class="fas fa-file-pdf"></i> Upload Notes
+        </a>
+        <div class="stage-completion" id="stage${stageIndex}Completion">0/${stage.tasks.length} completed</div>
+      `;
+      
       stagesContainer.appendChild(div);
     });
 
-    const checkboxes = document.querySelectorAll('.task');
-    const progressBar = document.getElementById('progress-bar');
-    const level = document.getElementById('level');
-
-    function updateProgress() {
-      const total = checkboxes.length;
-      const completed = Array.from(checkboxes).filter(c => c.checked).length;
-      const percent = Math.floor((completed / total) * 100);
-      progressBar.style.width = percent + '%';
-      progressBar.textContent = percent + '%';
-
-      if (percent < 10) level.textContent = '👾 Bot — Just getting started!';
-      else if (percent < 30) level.textContent = '🌱 Beginner — Keep growing your roots!';
-      else if (percent < 60) level.textContent = '⚡ Intermediate — You\'re getting powerful!';
-      else if (percent < 90) level.textContent = '🔥 Pro — Master of the craft!';
-      else level.textContent = '🚀 Pro++ — You\'ve reached the stars!';
+    function getGlobalIndex(stageIndex, taskIndex) {
+      let globalIndex = 0;
+      for (let i = 0; i < stageIndex; i++) {
+        globalIndex += stagesData[i].tasks.length;
+      }
+      return globalIndex + taskIndex;
     }
 
-    document.addEventListener("change", updateProgress);
-    window.onload = updateProgress;
+    function updateProgress() {
+      const tasks = document.querySelectorAll('.task-checkbox');
+      const completed = Array.from(tasks).filter(task => task.checked).length;
+      const total = tasks.length;
+      const percent = Math.round((completed / total) * 100);
+      
+      // Update progress bar
+      progressFill.style.width = `${percent}%`;
+      percentage.textContent = `${percent}%`;
+      
+      // Update counters
+      completedCount.textContent = completed;
+      
+      // Update stage completion indicators
+      updateStageCompletions();
+      
+      // Update level indicators and text
+      updateLevelIndicators(percent);
+      
+      // Show appropriate popup
+      showLevelPopup(percent);
+      
+      // Save progress
+      saveProgress();
+    }
+
+    function updateStageCompletions() {
+      stagesData.forEach((stage, stageIndex) => {
+        const startIndex = getGlobalIndex(stageIndex, 0);
+        const endIndex = startIndex + stage.tasks.length - 1;
+        const tasks = document.querySelectorAll('.task-checkbox');
+        
+        let completed = 0;
+        for (let i = startIndex; i <= endIndex; i++) {
+          if (tasks[i].checked) completed++;
+        }
+        
+        document.getElementById(`stage${stageIndex}Completion`).textContent = 
+          `${completed}/${stage.tasks.length} completed`;
+      });
+    }
+
+    function updateLevelIndicators(percent) {
+      // Remove active class from all labels
+      stageLabels.forEach(label => label.classList.remove("active"));
+      
+      // Add active class based on progress
+      if (percent < 10) {
+        stageLabels[0].classList.add("active");
+        level.textContent = "👾 Bot — Just getting started!";
+      } else if (percent < 30) {
+        stageLabels[1].classList.add("active");
+        level.textContent = "🌱 Beginner — Keep growing your roots!";
+      } else if (percent < 60) {
+        stageLabels[2].classList.add("active");
+        level.textContent = "⚡ Intermediate — You're getting powerful!";
+      } else if (percent < 90) {
+        stageLabels[3].classList.add("active");
+        level.textContent = "🔥 Pro — Master of the craft!";
+      } else {
+        stageLabels[4].classList.add("active");
+        level.textContent = "🚀 Pro++ — You've reached the stars!";
+      }
+    }
+
+    function showLevelPopup(percent) {
+      let message = "";
+      
+      if (percent >= 0 && percent < 10) {
+        message = "👾 Welcome to web development! Keep going to reach Beginner level!";
+      } else if (percent >= 10 && percent < 30) {
+        message = "🌱 Level Up! You're a Beginner now!";
+      } else if (percent >= 30 && percent < 60) {
+        message = "⚡ You're getting strong! Intermediate reached!";
+      } else if (percent >= 60 && percent < 90) {
+        message = "🔥 Almost there! Welcome to Pro stage!";
+      } else if (percent >= 90 && percent <= 100) {
+        message = "🚀 Mastery unlocked! You're Pro+! 🎉";
+      }
+      
+      // Only show popup if there's a message and it's different from last time
+      if (message && message !== popup.dataset.lastMessage) {
+        popup.textContent = message;
+        popup.dataset.lastMessage = message;
+        popup.classList.add("show");
+        setTimeout(() => popup.classList.remove("show"), 3000);
+      }
+    }
+
+    // Save progress to localStorage
+    function saveProgress() {
+      const tasks = document.querySelectorAll('.task-checkbox');
+      tasks.forEach((task, index) => {
+        localStorage.setItem(`task_${index}`, task.checked);
+      });
+    }
+
+    // Load progress from localStorage
+    function loadProgress() {
+      const tasks = document.querySelectorAll('.task-checkbox');
+      tasks.forEach((task, index) => {
+        const saved = localStorage.getItem(`task_${index}`);
+        if (saved === 'true') {
+          task.checked = true;
+        }
+      });
+    }
+
+    // Initialize on page load
+    window.onload = () => {
+      loadProgress();
+      updateProgress();
+      
+      // Add event listeners to all checkboxes
+      const tasks = document.querySelectorAll('.task-checkbox');
+      tasks.forEach(task => {
+        task.addEventListener('change', updateProgress);
+      });
+    };
   </script>
 </body>
 </html>
